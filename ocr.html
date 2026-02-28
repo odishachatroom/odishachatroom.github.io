@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OdishaChatroom | Founded by Abhishek Mohapatra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&family=Kalam:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #ffcc33;
+            --maroon: #7b0000;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+            --bg: #050a0a;
+        }
+
+        * { margin:0; padding:0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background: var(--bg); color: #fff; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* --- Navigation --- */
+        header {
+            padding: 20px 0;
+            background: rgba(0,0,0,0.9);
+            border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Kalam', cursive; font-size: 1.8rem; color: var(--gold); text-decoration: none; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 20px; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* --- Hero --- */
+        .hero {
+            height: 70vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(5, 10, 10, 0.85), var(--bg)), 
+                        url('https://images.unsplash.com/photo-1620050048381-007df680459c?q=80&w=2000') center/cover;
+        }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--gold); margin-bottom: 10px; }
+        .hero p { color: #aaa; margin-bottom: 30px; }
+
+        /* --- Admin/Team Grid --- */
+        .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-top: 50px; }
+        .admin-card { background: var(--glass); padding: 30px; border-radius: 20px; border: 1px solid var(--border); text-align: center; cursor: pointer; transition: 0.4s; }
+        .admin-card:hover { border-color: var(--gold); transform: translateY(-5px); background: rgba(255,204,51,0.05); }
+        .admin-card img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--gold); margin-bottom: 15px; object-fit: cover; }
+        .tag { font-size: 0.7rem; font-weight: bold; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; }
+
+        /* --- MODAL (Pop-up) --- */
+        .modal {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+        }
+        .modal-content {
+            background: #111; padding: 40px; border: 2px solid var(--gold); width: 90%; max-width: 500px;
+            border-radius: 20px; text-align: center; position: relative;
+        }
+        .close-btn { position: absolute; right: 20px; top: 15px; font-size: 25px; cursor: pointer; color: var(--gold); }
+        .modal-content h2 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 15px; }
+        .detail-item { margin-bottom: 10px; font-size: 1rem; color: #ccc; }
+        .detail-item b { color: var(--gold); }
+
+        /* --- Support Section --- */
+        .support-box {
+            background: var(--maroon); padding: 40px; border-radius: 20px; text-align: center; margin: 80px 0;
+            border: 1px solid var(--gold);
+        }
+
+        /* --- Buttons --- */
+        .pulse-btn {
+            display: inline-block; padding: 15px 35px; background: var(--maroon);
+            color: #fff; text-decoration: none; border-radius: 50px; font-weight: bold;
+            border: 2px solid var(--gold); animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% {transform: scale(1);} 50% {transform: scale(1.05);} 100% {transform: scale(1);} }
+
+        footer { padding: 40px; text-align: center; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <a href="#" class="logo">ଓଡ଼ିଶା Chatroom</a>
+            <div class="nav-links">
+                <a href="https://t.me/OCR_Network/183">Join Group</a>
+                <a href="https://instagram.com/odishachatroomm">Instagram</a>
+                <a href="mailto:abhi008726@gmail.com?subject=Apply for Admin - OdishaChatroom" style="background:var(--gold); color:#000; padding: 5px 15px; border-radius: 5px;">Apply for Admin</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>OdishaChatroom</h1>
+        <p>Ama Sanskruti, Ama Gauraba.</p>
+        <a href="https://t.me/OCR_Network/183" class="pulse-btn">Join the Community</a>
+    </section>
+
+    <div class="container">
+        <h2 style="text-align: center; color: var(--gold); font-family: 'Cinzel'; margin-top: 50px;">The Leadership</h2>
+        <p style="text-align: center; color: #888;">(Click on Creator for Bio)</p>
+        
+        <div class="admin-grid">
+            <div class="admin-card" onclick="openCreatorModal()">
+                <img src="https://i.imgur.com/0A592Sw.png" alt="Abhishek">
+                <div class="tag">Founder & Creator</div>
+                <h4>Abhishek Mohapatra</h4>
+            </div>
+            <div class="admin-card">
+                <img src="https://i.imgur.com/GOrZ6Gb.jpeg" alt="Jaga">
+                <div class="tag">Admin</div>
+                <h4>Jaga (Male)</h4>
+            </div>
+            <div class="admin-card">
+                <img src="https://i.imgur.com/i8oEOPw.jpeg" alt="Tina">
+                <div class="tag">Admin</div>
+                <h4>Tina (Female)</h4>
+            </div>
+        </div>
+
+        <div class="support-box">
+            <h2 style="font-family: 'Cinzel'; margin-bottom: 10px;">Support & Contact 💌</h2>
+            <p>For any group complaints or feedback, please reach out to us:</p>
+            <a href="mailto:abhi008726@gmail.com" style="color: var(--gold); font-size: 1.2rem; font-weight: bold; text-decoration: none;">abhi008726@gmail.com</a>
+        </div>
+    </div>
+
+    <div id="creatorModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img src="https://i.imgur.com/0A592Sw.png" style="width: 100px; border-radius: 50%; border: 2px solid var(--gold); margin-bottom: 15px;">
+            <h2>Abhishek Mohapatra</h2>
+            <div class="detail-item"><b>DOB:</b> 04 July 2003</div>
+            <div class="detail-item"><b>Qualification:</b> BCA Graduate</div>
+            <div class="detail-item" style="margin-top: 15px; font-size: 0.9rem; border-top: 1px solid #333; padding-top: 10px;">
+                Born in Jagatsinghpur, Odisha, Abhishek grew up in Uttar Pradesh. Despite the distance, his love for Odia culture led him to create this digital bridge in 2022.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Founded by Abhishek Mohapatra | Jai Jagannath</p>
+    </footer>
+
+    <script>
+        function openCreatorModal() {
+            document.getElementById("creatorModal").style.display = "flex";
+        }
+        function closeModal() {
+            document.getElementById("creatorModal").style.display = "none";
+        }
+        // Close modal if user clicks outside of the box
+        window.onclick = function(event) {
+            let modal = document.getElementById("creatorModal");
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
+    </script>
+
+</body>
+</html>
