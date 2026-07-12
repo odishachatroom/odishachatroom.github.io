@@ -29,7 +29,6 @@
             line-height: 1.6;
         }
 
-        /* Premium Header Interface */
         header {
             background-color: var(--dark);
             color: white;
@@ -69,7 +68,6 @@
             color: #bfaecf;
         }
 
-        /* Top Action Button */
         .btn-consultation {
             background: linear-gradient(135deg, var(--gold), #F3E5AB);
             color: var(--dark);
@@ -84,7 +82,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Modern Dashboard Layout */
         .dashboard-container {
             max-width: 1100px;
             margin: 1.5rem auto;
@@ -94,7 +91,6 @@
             gap: 1.5rem;
         }
 
-        /* Left Profile Card Optimized for Mobile Viewports */
         .side-panel {
             background: var(--card-bg);
             border-radius: 12px;
@@ -131,7 +127,6 @@
             font-weight: 600;
         }
 
-        /* Social Links Hub Grid */
         .social-hub {
             border-top: 1px solid var(--border);
             padding-top: 1rem;
@@ -182,7 +177,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        /* Right Content Panel */
         .main-content {
             display: flex;
             flex-direction: column;
@@ -212,7 +206,25 @@
             color: #444;
         }
 
-        /* Educational Section List Layout */
+        .article-card {
+            background: #faf9fd;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .article-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .article-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
         .info-list {
             display: flex;
             flex-direction: column;
@@ -238,7 +250,6 @@
             color: #555;
         }
 
-        /* Modal Dialog Interface */
         .modal {
             display: none;
             position: fixed;
@@ -318,11 +329,8 @@
             margin-top: 4rem;
         }
 
-        /* Responsive Layout Overrides */
         @media (min-width: 901px) {
-            .social-grid {
-                grid-template-columns: 1fr;
-            }
+            .social-grid { grid-template-columns: 1fr; }
             .social-link {
                 flex-direction: row;
                 justify-content: flex-start;
@@ -331,40 +339,24 @@
                 gap: 0.8rem;
             }
             .social-link span { margin-bottom: 0; }
-            .profile-header-mobile {
-                flex-direction: column;
-                text-align: center;
-            }
-            .profile-photo {
-                width: 160px;
-                height: 160px;
-            }
+            .profile-header-mobile { flex-direction: column; text-align: center; }
+            .profile-photo { width: 160px; height: 160px; }
         }
 
         @media (max-width: 900px) {
-            .dashboard-container {
-                grid-template-columns: 1fr;
-                margin: 1rem auto;
-            }
-            header {
-                padding: 0.8rem 1rem;
-            }
+            .dashboard-container { grid-template-columns: 1fr; margin: 1rem auto; }
+            header { padding: 0.8rem 1rem; }
         }
 
         @media (max-width: 480px) {
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Upper Dashboard Header Navigation -->
     <header>
         <div class="logo-container">
-            <!-- Astro Nilachakra Brand Logo -->
             <img src="https://i.ibb.co/23BcbJq6/1783844130398.png" alt="Astro Nilachakra Logo" class="logo-img">
             <div class="logo-text">
                 <h1>AstroNilachakra</h1>
@@ -376,13 +368,10 @@
         </div>
     </header>
 
-    <!-- Balanced Layout Grid -->
     <div class="dashboard-container">
         
-        <!-- Identity Side Panel -->
         <aside class="side-panel">
             <div class="profile-header-mobile">
-                <!-- Personal Profile Image -->
                 <img src="https://i.ibb.co/fd4b59X8/1783811763127.png" alt="Astrologer Abhishek Mohapatra" class="profile-photo">
                 <div class="profile-info-block">
                     <h2>Abhishek Mohapatra</h2>
@@ -390,7 +379,6 @@
                 </div>
             </div>
             
-            <!-- Connection Options Map with live community destination links -->
             <div class="social-hub">
                 <h4>Join Community</h4>
                 <div class="social-grid">
@@ -406,9 +394,35 @@
                 </div>
             </div>
         </aside>
+                <main class="main-content">
+            
+            <section id="articles-section">
+                <h3>Latest Articles & Jyotish Insights</h3>
+                <div class="info-list">
+                    
+                    <!-- NEW POSTS GO DIRECTLY BELOW THIS LINE -->
+                    <div class="article-card">
+                        <span class="article-meta">Published: July 12, 2026 | Category: Kundali Research</span>
+                        <h4>Graha Dasha & Compulsive Desires: A Study on Youth Janma Kundalis</h4>
+                        
+                        <img src="https://i.ibb.co/Q3CKntCJ/file-000000006c0471fa9abd587a7584f374.png" alt="Kundali Analysis Study Chart" style="width: 100%; max-height: 380px; object-fit: contain; border-radius: 6px; margin: 0.8rem 0; border: 1px solid var(--border); background: #fdfcff;">
+                        
+                        <p class="bio-paragraph">
+                            Maine haal hi me kuch aise youth ki Janma Kundali ka analysis kiya jo adult content aur galat cheezon ke severe addiction se guzar rahe hain. Is research ka uddeshya kisi ko judge karna nahi, balki yeh dekhna hai ki aakhir kaun se planetary alignments aur functional combinations is tarah ke compulsive bhoga aur behaviors ko trigger karte hain.
+                        </p>
+                        
+                        <p class="bio-paragraph">
+                            Vedic Astrology ke prachin Siddhanta ke mutabiq, jab bhi <b>Rahu</b> (uncontrolled illusionary desires) ka prabhav <b>Shukra / Venus</b> (pleasures, sensory indulgence) ya fir <b>Astam Bhava / 8th House</b> (hidden secrets, darker aspects) aur <b>Dvadasha Bhava / 12th House</b> (subconscious fantasies, isolation) par padta hai, toh vyakti is tarah ke compulsive habits me jaldi ulajh jata hai. Iske sath hi, agar <b>Chandra / Moon</b> (mann) par paap graha ki drishti ho ya wo afflicted ho, toh aatmaniyantran (self-control) kam ho jata hai.
+                        </p>
+                        
+                        <p class="bio-paragraph" style="margin-bottom: 0; font-weight: 600; color: var(--primary);">
+                            Aapke anubhav ke mutabiq in sabhi charts me kya common planetary patterns ya yuti dikh rahe hain? Apne thoughts aur analysis niche diye gaye platforms par zarur share karein!
+                        </p>
+                    </div>
+                    <!-- NEW POSTS GO DIRECTLY ABOVE THIS LINE -->
 
-        <!-- Main Copy Sections -->
-        <main class="main-content">
+                </div>
+            </section>
             
             <section>
                 <h3>Astrological Journey & Philosophy</h3>
@@ -453,14 +467,12 @@
         </main>
     </div>
 
-    <!-- Booking Modal Framework -->
     <div class="modal" id="bookingModal">
         <div class="modal-content">
             <span class="close-btn" id="closeModalBtn">&times;</span>
             <h3 style="margin-bottom: 0.5rem; border: none; color: var(--primary);">Secure Chart Evaluation</h3>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.2rem;">Fill out your precise birth details below.</p>
             
-            <!-- Configured Formspree Form Integration Router -->
             <form action="https://formspree.io/f/xaqrwlbd" method="POST">
                 <div class="form-row">
                     <div class="form-group">
